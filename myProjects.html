@@ -19,8 +19,34 @@
             
             <h1>My Projects</h1>
 
-            <div class="Item">
+            <div class="TopItem">
+                <label for="search word">Search keyword: </label>
+                <input type="text" id="searchWord" name="search word" hint="Search keyword">
+                <button class="TopItemButton" onclick="search()">Search</button><br>
+                <p/>
+                
+                <label for="category">Filter by category: </label><br>
+                <input type="checkbox" id="website" name="website">
+                <label for="website">Website</label><br>
+                <input type="checkbox" id="server" name="server">
+                <label for="server">Server</label><br>
+                <input type="checkbox" id="smartphoneApplication" name="smartphone application">
+                <label for="smartphone application">Smartphone application</label><br>
+                <input type="checkbox" id="artificialIntelligence" name="artificial intelligence">
+                <label for="artificial intelligence">Artificial intelligence</label><br>
+                <input type="checkbox" id="dataAnalysis" name="data analysis">
+                <label for="data analysis">Data analysis</label><br>
+                <input type="checkbox" id="algorithms" name="algorithms">
+                <label for="algorithms">Algorithms</label><br>
+                <input type="checkbox" id="parallelAndDistributedProgramming" name="parallel and distributed programming">
+                <label for="parallel and distributed programming">Parallel and distributed programming</label><br>
+                <button class="TopItemButton" onclick="filter()">Filter</button>
+                
+            </div>
+
+            <div id="project1" class="Item">
                 <h2>An Electronic Commerce Website for a Book Shop using Express.js Server with Customer Churn Prediction using Neural Neteork</h2>
+                <p>Category: Artificial intelligence, Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS, Python</p>
                 <p>Software: Visual Studio Code</p>
                 <p>Keywords: Node.js, Express.js, MongoDB, Jupyter Notebook, Artificial Neural Network, TensorFlow.js, Machine Learning, Binary Classification</p>
@@ -42,8 +68,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project2" class="Item">
                 <h2>City Complaint System (MERN Stack)</h2>
+                <p>Category: Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS</p>
                 <p>Software: Visual Studio Code</p>
                 <p>Keywords: MERN Stack, Node.js, Express.js, MongoDB, React.js, NodeMailer,js, Chart,js, Statistical Reports (Chart)</p>
@@ -65,8 +92,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project3" class="Item">
                 <h2>SoccerDB</h2>
+                <p>Category: Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS</p>
                 <p>Software: Visual Studio Code</p>
                 <p>Keywords: Express.js, MongoDB, Third Party API, REST API, Security, Password Hashing, PBKDF2, Password Rules, Password Strength Indicator</p>
@@ -94,8 +122,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project4" class="Item">
                 <h2>Customer Churn Prediction</h2>
+                <p>Category: Artificial intelligence</p>
                 <p>Language: Python</p>
                 <p>Software: Jupyter Notebook</p>
                 <p>Keywords: Machine Learning, Artificial Neural Network, Logistic Regression, Keras, Scikit Learn, Binary Classification, Regularization, One-Hot Encoding</p>
@@ -114,8 +143,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project5" class="Item">
                 <h2>Implementation of Algorithms (Hash Table, Binary Search Tree and Graph)</h2>
+                <p>Category: Algorithms</p>
                 <p>Language: Python</p>
                 <p>Software: PyCharm</p>
                 <p>Keywords: Hash Table, Binary Search Tree, AVL Tree, Graph, Breadth First Search (in graph), Concurrent Process</p>
@@ -134,8 +164,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project6" class="Item">
                 <h2>Parallel Programming and Distributed Programming (OpenMP and MPI in Linux)</h2>
+                <p>Category: Parallel and distributed programming</p>
                 <p>Language: C, C++</p>
                 <p>Software: Oracle VM VirtualBox (Linux Ubuntu Virtual Machine)</p>
                 <p>Keywords: Linux, Parallel Programming, Distributed Programming, Thread, Process, OpenMP, MPI</p>
@@ -154,8 +185,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project7" class="Item">
                 <h2>Data Analysis using R</h2>
+                <p>Category: Data analysis</p>
                 <p>Language: R</p>
                 <p>Software: R Studio</p>
                 <p>Keywords: Data Analysis, Descriptive Statistics, Histogram, Strip Chart, Data Pre-Processing</p>
@@ -171,8 +203,9 @@
                 <br/>
             </div>
 
-            <div class="Item">
+            <div id="project8" class="Item">
                 <h2>Geo Quiz App (Android)</h2>
+                <p>Category: Smartphone application</p>
                 <p>Language: Java, XML</p>
                 <p>Software: Android Studio</p>
                 <p>Keywords: Android, Data Binding, Intent, Toast</p>
@@ -188,5 +221,92 @@
         </div>
 
     </body>
+
+    <script>
+        // Reference: https://www.w3schools.com/howto/howto_js_filter_table.asp
+
+        function search() {
+            for (var i = 1; i <= 8; i++) {
+                const projectId = 'project' + i;
+                console.log(projectId);
+                const project = document.getElementById(projectId);
+                
+                const title = document.getElementsByTagName("h2")[0];
+                console.log(title);
+                const ps = project.getElementsByTagName("p");
+                const category = ps[0];
+                const language = ps[1];
+                const software = ps[2];
+                const keywords = ps[3];
+                const description = ps [4];
+
+                const titleValue = title.textContent || title.innerText;
+                const categoryValue = category.textContent || category.innerText;
+                const languageValue = language.textContent || language.innerText;
+                const softwareValue = software.textContent || software.innerText;
+                const keywordsValue = keywords.textContent || keywords.innerText;
+                const descriptionValue = description.textContent || description.innerText;
+
+                const searchWord = document.getElementById("searchWord").value.toLowerCase();
+                console.log(searchWord);
+
+                if (titleValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (categoryValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (languageValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (keywordsValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (descriptionValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else {
+                    project.style.display = "none";
+                }
+            }
+        }
+
+        function filter() {
+            for (var i = 1; i <= 8; i++) {
+                const projectId = 'project' + i;
+                console.log(projectId);
+                const project = document.getElementById(projectId);
+
+                const category = project.getElementsByTagName("p")[0];
+                console.log(category);
+                const categoryValue = category.textContent || category.innerText;
+                
+                if (document.getElementById("website").checked && categoryValue.toLowerCase().indexOf("website") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("server").checked && categoryValue.toLowerCase().indexOf("server") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("smartphoneApplication").checked && categoryValue.toLowerCase().indexOf("smartphone application") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("artificialIntelligence").checked && categoryValue.toLowerCase().indexOf("artificial intelligence") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("dataAnalysis").checked && categoryValue.toLowerCase().indexOf('data analysis') > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById('algorithms').checked && categoryValue.toLowerCase().indexOf("algorithms") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("parallelAndDistributedProgramming").checked && categoryValue.toLowerCase().indexOf('parallel and distributed programming') > -1) {
+                    project.style.display = "";
+                }
+                else {
+                    project.style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </html>

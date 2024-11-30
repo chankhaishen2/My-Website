@@ -17,25 +17,55 @@
 .TopNavigation ul li a {
     text-decoration: none;
     color: #000000;
+    font-size: 20px;
 }
 
 .Content {
     margin: 30px;
 }
 
+.Content h1 {
+    font-size: 30px;
+}
+
+.TopItem {
+    padding: 15px;
+    background-color: #d5ba90;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+.TopItem label, input, button {
+    font-size: 20px;
+}
+
+.TopItemButton {
+    padding: 5px;
+    background-color: #9fd590;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
 .Item {
     background-color: #9fd590;
     border-radius: 20px;
     margin: 20px;
-    list-style-type: none;
     padding: 20px;
+}
+
+.Item h2 {
+    font-size: 25px;
+}
+
+.Item p {
+    font-size: 20px;
 }
 
 .LinkButton {
     padding: 5px;
     background-color: #d5cd90;
-    border: none;
-    border-radius: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
 }
 
 .LinkButton a {
