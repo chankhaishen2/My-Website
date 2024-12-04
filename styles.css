@@ -25,7 +25,15 @@
 }
 
 .Content h1 {
+    font-size: 35px;
+}
+
+.Content h2 {
     font-size: 30px;
+}
+
+.Content h3 {
+    font-size: 25px;
 }
 
 .TopItem {
@@ -44,6 +52,12 @@
     background-color: #9fd590;
     border: 1px solid #ffffff;
     border-radius: 5px;
+    color: #000000;
+}
+
+.SingleLineContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .Item {
@@ -54,7 +68,7 @@
 }
 
 .Item h2 {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .Item p {
@@ -90,4 +104,8 @@
     background-color: #9fd590;
     border: 1px solid #000000;
     padding: 10px;
+}
+
+.Table th, td {
+    font-size: 20px;
 }
