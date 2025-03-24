@@ -1,8 +1,9 @@
 .TopNavigation {
     overflow: hidden;
-    background-color: #d5cd90;
+    background-color: #46524c;
     position: sticky;
-    top: 0
+    top: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .TopNavigation ul {
@@ -16,29 +17,38 @@
 
 .TopNavigation ul li a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 20px;
 }
 
 .Content {
-    margin: 30px;
+    padding: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #dfeedb;
+}
+
+.Content button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .Content h1 {
     font-size: 35px;
+    color: #2a2918;
 }
 
 .Content h2 {
     font-size: 30px;
+    color: #282d19;
 }
 
 .Content h3 {
     font-size: 25px;
+    color: #251f2e;
 }
 
 .TopItem {
     padding: 15px;
-    background-color: #d5ba90;
+    background-color: #9f9e89;
     border-radius: 30px;
     margin: 20px;
 }
@@ -61,7 +71,7 @@
 }
 
 .Item {
-    background-color: #9fd590;
+    background-color: #9eba96;
     border-radius: 20px;
     margin: 20px;
     padding: 20px;
@@ -87,6 +97,10 @@
     color: #000000;
 }
 
+.Description {
+    color: #383838;
+}
+
 .Table table {
     width: 100%;
     border-collapse: collapse;
@@ -101,7 +115,7 @@
 }
 
 .Table td {
-    background-color: #9fd590;
+    background-color: #9eba96;
     border: 1px solid #000000;
     padding: 10px;
 }

@@ -22,7 +22,7 @@
             <div class="TopItem">
                 <div class="SingleLineContainer">
                     <label for="search word">Search keyword: </label>
-                    <input type="text" id="searchWord" name="search word" placeholder="Keyword">
+                    <input type="search" id="searchWord" name="search word" placeholder="Keyword" cols="50">
                     <button class="TopItemButton" onclick="search()">Search</button><br>
                 </div>
                 
@@ -37,8 +37,10 @@
                 <label for="artificial intelligence">Artificial intelligence</label><br>
                 <input type="checkbox" id="dataAnalysis" name="data analysis">
                 <label for="data analysis">Data analysis</label><br>
-                <input type="checkbox" id="algorithms" name="algorithms">
-                <label for="algorithms">Algorithms</label><br>
+                <input type="checkbox" id="webSecurity" name="webSecurity">
+                <label for="web security">Web security</label><br>
+                <input type="checkbox" id="dataStructureAndAlgorithms" name="dataStructureAndAlgorithms">
+                <label for="data structure and algorithms">Data structure and algorithms</label><br>
                 <input type="checkbox" id="parallelAndDistributedProgramming" name="parallel and distributed programming">
                 <label for="parallel and distributed programming">Parallel and distributed programming</label><br>
                 <div class="SingleLineContainer">
@@ -47,13 +49,15 @@
                 
             </div>
 
-            <div id="project1" class="Item">
-                <h2>An Electronic Commerce Website for a Book Shop using Express.js Server with Customer Churn Prediction using Neural Neteork</h2>
+            <div id="project9" class="Item">
+                <h2>An Electronic Commerce Website for a Book Shop using Express.js Server with Customer Churn Prediction using Neural Network</h2>
                 <p>Category: Artificial intelligence, Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS, Python</p>
                 <p>Software: Visual Studio Code</p>
-                <p>Keywords: Node.js, Express.js, MongoDB, Jupyter Notebook, Artificial Neural Network, TensorFlow.js, Machine Learning, Binary Classification</p>
-                <p>This project is my final year project done from April 2024 to June 2024. This project consists of a dummy e-commerce book shop website equipped with customer churn prediction feature powered by artificial neural network. The website has two types of user, namely administrator and customer. The website is built using javascript (Express.js). The customer churn prediction model is built using Tensor Flow. The training data originates from https://www.kaggle.com/datasets/fridrichmrtn/user-churn-dataset. The model is pre-trained and saved on the server and used when necessary. The churn prediction is made based on customer's activity on the website, such as number of viewing item, number of adding to cart and number of transactions. I would like to express my gratitute to my supervisor, Dr. Hing Ratana for his guidance.</p>
+                <p>Date: June 2024</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                </p><p>Keywords: Node.js, Express.js, MongoDB, Jupyter Notebook, Artificial Neural Network (Feedforward), TensorFlow.js, Machine Learning, Binary Classification</p>
+                <p class="Description">This project is my final year project done from April 2024 to June 2024. This project consists of a dummy e-commerce book shop website equipped with customer churn prediction feature powered by artificial neural network. The server is built using Express.js framework and MongoDB database. The customer churn prediction model is built using TensorFlow.js. The training data originates from https://www.kaggle.com/datasets/fridrichmrtn/user-churn-dataset. The model is pre-trained and saved on the server and used when necessary. The churn prediction model ingests 12 predictor variables for each customer. The variables are formed around customer's activity on the website, such as user session count, number of viewing item, number of adding to cart number of transactions and transaction amount. The customer churn prediction model is a simple artificial neural network with 1 input layer with 4 neurons using rectified linear unit (ReLU) activation function, 1 hidden layer with 4 neurons using ReLU activation function and 1 output layer with 1 neuron using sigmoid activation function. In this project, customer churn is defined as the customer will not visit to the website on the next month. As the result of the customer churn prediction model, the probability of churn of each customer is displayed to the administrator. The website has two types of user, namely administrator and customer. The administrator can view churn probability of each customer, add, edit, update stock and delete each item sold on the website and view all orders in the system. The customer can register themselves, view items sold (login is not required), add item to cart (login is required), place order for items which are in the cart (login is required) and view past orders (login is required). I would like to thank my supervisor, Dr. Hing Ratana for his guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="Final Year Project April 2024 Report.pdf"><p>Report</p></a>
@@ -65,18 +69,21 @@
                         <a href="https://drive.google.com/file/d/15vV-A0Iaj_vmugS59WFE8uRAPzoToKBH/view?usp=sharing"><p>Demostration Video</p></a>
                     </button>
                     <button class="LinkButton">
-                        <a href="https://github.com/ChanKhaiShen/e-commerce-book-shop-back-end"><p>Code</p></a>
+                        <a href="https://github.com/chankhaishen2/Electronic-Commerce-Book-Shop-and-Customer-Churn-Prediction"><p>Code</p></a>
                     </button>
                 </div>
+                <iframe src="https://drive.google.com/file/d/15vV-A0Iaj_vmugS59WFE8uRAPzoToKBH/preview" width="680" height="480" allow="autoplay"></iframe>
             </div>
 
-            <div id="project2" class="Item">
+            <div id="project8" class="Item">
                 <h2>City Complaint System (MERN Stack)</h2>
                 <p>Category: Data analysis, Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS</p>
                 <p>Software: Visual Studio Code</p>
-                <p>Keywords: MERN Stack, Node.js, Express.js, MongoDB, React.js, NodeMailer,js, Chart,js, Statistical Reports (Chart)</p>
-                <p>This project is my final year project done from August 2023 to November 2023. Although I managed to complete the project, but I failed this subject because I submitted late. This project consists of a dummy city complaint system website built based on MERN stack (MongoDB-Express.js-React.js-Node.js). The website has three types of users, namely complainant, complaint handler and administrator. The website allows administrator to view statistics of the complaints received by means of bar charts. The website confirms complainant's email address using One-Time Password (OTP) and sends notification via email when there is an update in the complaint case. The website loads areas and complaint category dynamically, allowing the administrator to specify the list of area and complaint category in the system. I would like to thank my supervisor, Mr. Light Lau Teng Lye for his guidance.</p>
+                <p>Date: December 2023</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: MERN Stack, Node.js, Express.js, MongoDB, React.js, One-Time Password (OTP), NodeMailer.js, Chart.js, Statistical Reports (Chart), Pivot Table, Aggregate Query (MongoDB)</p>
+                <p class="Description">This project is my final year project done from August 2023 to December 2023. Although I managed to complete the project, but I failed this subject because I submitted late. This project consists of a dummy city complaint system website built based on MERN stack (MongoDB-Express.js-React.js-Node.js). The website has three types of users, namely complainant, complaint handler and administrator. The website allows administrator to view statistics of the complaints received. The statistics is displayed in pie charts of complaint case count by area, by category and by status. The statistics is also displayed in stacked bar charts of complaint case count by area and by category (stacked by status). The statistics is also displayed in a summary table displaying the complaint case count in "received" status, "progressing" status, "solved" status and total case count for each category and area comnination. The website confirms complainant's email address using One-Time Password (OTP) and sends notification via email when there is an update in the complaint case. The website loads areas and complaint category dynamically, allowing the administrator to specify the list of area and complaint category in the system. The website allows complainant, complaint handler and administrator to add message to a complaint case. The message functionality is not in real time, but it provides necessary functionality for communication between complaint handler and complainant on the complaint case. The website also allows the administrator to assign complaint handler to a specific case, as well as allowing the complaint handler to choose to take charge of a complaint case which does not have complaint handler yet. The website allows the users to filter the complaint cases based on area, category and status, as well as allowing the users to sort the complaint cases based on area, category, status, title and date. The website also allows the users to search the complaint cases based on title, start date and end date. I would like to thank my supervisor, Mr. Light Lau Teng Lye for his guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="Final Year Project August 2023 Report.pdf"><p>Report</p></a>
@@ -93,43 +100,26 @@
                 </div>
             </div>
 
-            <div id="project3" class="Item">
-                <h2>SoccerDB</h2>
-                <p>Category: Website, Server</p>
-                <p>Languages: Javascript, HTML, CSS</p>
-                <p>Software: Visual Studio Code</p>
-                <p>Keywords: Express.js, MongoDB, Third Party API, REST API, Security, Password Hashing, PBKDF2, Password Rules, Password Strength Indicator</p>
-                <p>This project is the coursework for two subjects, namely Web Application Programming Interface (API) Development (Task 1, April 2023 to July 2023) and Security (Task 2, August 2023 to November 2023). In Task 1, a website that uses a third-party API, SportsDB, as its source of data is developed. This website allows users to view the information, such as time, location and results, of any soccer event worldwide. Then, the user can save the event in bookmarks for future reference. In Task 2, the security aspects of the website are reviewed. Improvements are made in two aspects. Firstly, the password is hashed using Password-Based Key Derivation Function 2 (PBKDF2) before stored in the database. Secondly, password rules, such as "must have numbers" or "must have special characters", are implemented and a simple password strength indicator is developed. I would like to thank my lecturers, Mr. Shahriman Mohd Said (Web API Development) and Mr. R.K. Krishnamoorthy (Security) for their guidance.</p>
-                <div class="SingleLineContainer">
-                    <button class="LinkButton">
-                        <a href="6003CEM April 2023 Task.pdf"><p>Task 1 Question</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="6003CEM April 2023 Report.pdf"><p>Task 1 Report</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="6005CEM August 2023 Task.pdf"><p>Task 2 Question</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="6005CEM August 2023 Report.pdf"><p>Task 2 Report</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="6005CEM August 2023 Slides.pdf"><p>Task 2 Slides</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="https://github.com/ChanKhaiShen/SoccerDB"><p>Code</p></a>
-                    </button>
-                </div>
+            <div id="project7" class="Item">
+                <h2>An Online Quiz System with A Quiz Answering Android Application and A Quiz Setting Website</h2>
+                <p>Category: Smartphone application, Website, Server</p>
+                <p>Languages: Java, XML, Javascript, HTML, CSS</p>
+                <p>Software: Android Studio, Visual Studio Code</p>
+                <p>Date: 2025</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: </p>
+                <p class="Description">This is a side project built from March 2025 on the base of Geo Quiz App, a homework in Android Development Skills subject (August 2022 to November 2022). I would like to thank my lecturer, Ms. Koo Lee Chun for teaching me the Android development skills.</p>
             </div>
 
-
-            <div id="project4" class="Item">
-                <h2>Customer Churn Prediction</h2>
+            <div id="project6" class="Item">
+                <h2>Customer Churn Prediction in Telecommunication Company: Comparison of Logistic Regression and Artificial Neural Network</h2>
                 <p>Category: Artificial intelligence</p>
                 <p>Language: Python</p>
                 <p>Software: Jupyter Notebook</p>
-                <p>Keywords: Machine Learning, Artificial Neural Network, Logistic Regression, Keras, Scikit Learn, Binary Classification, Regularization, One-Hot Encoding</p>
-                <p>This project is the coursework for Machine Learning and Related Applications subject from August 2023 to November 2023. In this project, two machine learning methods, namely logistic regression and artificial neural network, are used to predict the customers of a telecommunication company as "churner" or "non-churner". The training dataset is originated from https://www.kaggle.com/datasets/dileep070/logisticregression-telecomcustomer-churmprediction. The data is pre-processed by using one-hot-encoding to transform categorical data into numerical data. Both machine learning models are fine tuned using L1 regularization, L2 regularization and elastic net regularization. All three regularization methods are compared based on accuracy. Both machine learning models (logistic regression and artificial neural network) are compared based on accuracy, loss, precision, recall, F-score and confusion matrix. Based on the observation, in predicting customer churn, logistic regression can achieve nearly same performance as artificial neural network. I would like to thank to my lecturer, Ms. Vasuky Mohanan for her guidance.</p>
+                <p>Date: November 2023</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: Machine Learning, Artificial Neural Network (Feedforward), Logistic Regression, Keras, Scikit Learn, Binary Classification, Regularization, One-Hot Encoding</p>
+                <p class="Description">This project is the coursework for Machine Learning and Related Applications subject from August 2023 to November 2023. In this project, two machine learning methods, namely logistic regression and artificial neural network, are used to predict the customers of a telecommunication company as "churner" or "non-churner". The training dataset is originated from https://www.kaggle.com/datasets/dileep070/logisticregression-telecomcustomer-churmprediction. The data is pre-processed by using one-hot-encoding to transform categorical data into numerical data. Both machine learning models are fine tuned using L1 regularization, L2 regularization and elastic net regularization. All three regularization methods are compared based on accuracy. Both machine learning models (logistic regression and artificial neural network) are compared based on accuracy, loss, precision, recall, F-score and confusion matrix. Based on the observation, in predicting customer churn, logistic regression can achieve nearly same performance as artificial neural network. I would like to thank my lecturer, Ms. Vasuky Mohanan for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="6006CEM August 2023 Task.pdf"><p>Task Question</p></a>
@@ -138,24 +128,26 @@
                         <a href="6006CEM August 2023 Report.pdf"><p>Report</p></a>
                     </button>
                     <button class="LinkButton">
-                        <a href="https://github.com/ChanKhaiShen/Customer-Churn-Prediction"><p>Code</p></a>
+                        <a href="https://github.com/chankhaishen2/Customer-Churn-Prediction-in-Telecommunication-Sector"><p>Code</p></a>
                     </button>
                 </div>
             </div>
-
+            
             <div id="project5" class="Item">
                 <h2>Grocery Big Data (Descriptive Analysis and Clustering)</h2>
                 <p>Category: Artificial intelligence, Data analysis</p>
                 <p>Language: R</p>
                 <p>Software: R Studio</p>
-                <p>Keywords: Machine Learning, Clustering, k-means Clustering, Boxplot, Histogram, Pie Chart</p>
-                <p>This project is part of the coursework for Big Data Programming Project from August 2022 to November 2022. This project used data collected and the source of dataset is from https://doi.org/10.6084/m9.figshare.c.4769354.v2. This project has two parts, namely descriptive analysis and clustering. In the descriptive analysis part, the grocery purchase data is analysed based on its distribution (mean, median, first quartile, third quartile, minimum value and maximum value) and histograms and boxplots are drawn. Besides that, the grocery purchase data is used to draw a pie chart to illustrate the percentage of sales of each food and drinks category. In the clustering part, all customers are split into 4 clusters. While I was considering the number of clusters, I tried out different number of clusters and compared the sum of squares error within cluster and the Silhouette width. The members of each cluster are analysed and the distinct behaviour of each cluster (in terms of fraction of buying certain type of food) is visualized using boxplots. I would like to thank to my lecturer, Dr. Fakhitah Ridzuan for her guidance.</p>
+                <p>Date: November 2022</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: Machine Learning, Clustering, k-means Clustering, Silhouette width, Boxplot, Histogram, Pie Chart</p>
+                <p class="Description">This project is part of the coursework for Big Data Programming Project from August 2022 to November 2022. This project used data collected from Tesco grocery shop in London. The source of dataset is from https://doi.org/10.6084/m9.figshare.c.4769354.v2. This project has two parts, namely descriptive analysis and clustering. In the descriptive analysis part, the grocery purchase data is analysed based on its distribution (mean, median, first quartile, third quartile, minimum value and maximum value) and histograms and boxplots are drawn. Besides that, the grocery purchase data is used to draw a pie chart to illustrate the percentage of sales of each food and drinks category. In the clustering part, all customers are split into 4 clusters. While I was considering the number of clusters, different number of clusters are tried out and the sum of squared error within cluster and the Silhouette width are calculated. The graph of sum of squared error versus number of clusters and the graph of Silhouette width versus number of clusters are plotted. It is found that the suitable number of clusters is 4. The members of each cluster are analysed and the distinct behaviour of each cluster (in terms of fraction of buying certain type of food) is visualized using boxplots. The report is slightly edited on March 2025 to add more explanation on the formula of squared error and the calculation of Silhouette width I would like to thank my lecturer, Dr. Fakhitah Ridzuan for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
-                        <a href="5011CEM August 2022 Report.pdf"><p>Report</p></a>
+                        <a href="5011CEM August 2022 Report (Descriptive Analysis and Clustering) (Edited March 2025).pdf"><p>Report</p></a>
                     </button>
                     <button class="LinkButton">
-                        <a href="5011CEM August 2022 Slides.pdf"><p>Slides</p></a>
+                        <a href="5011CEM August 2022 Slides (Descriptive Analysis and Clustering).pdf"><p>Slides</p></a>
                     </button>
                     <button class="LinkButton">
                         <a href="https://github.com/chankhaishen2/Grocery-Big-Data-Descriptive-Analysis-and-Clustering"><p>Code</p></a>
@@ -163,13 +155,15 @@
                 </div>
             </div>
 
-            <div id="project6" class="Item">
-                <h2>Implementation of Algorithms (Hash Table, Binary Search Tree and Graph)</h2>
-                <p>Category: Algorithms</p>
+            <div id="project4" class="Item">
+                <h2>Implementation of Algorithms (Hash Table, Binary Search Tree, Graph and Concurrent Process)</h2>
+                <p>Category: Data structure and algorithms</p>
                 <p>Language: Python</p>
                 <p>Software: PyCharm</p>
+                <p>Date: July 2022</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
                 <p>Keywords: Hash Table, Binary Search Tree, AVL Tree, Graph, Breadth First Search (in graph), Concurrent Process</p>
-                <p>This project is the coursework for Advanced Algorithms subject from April 2022 to July 2022. There are four tasks in the question paper. Task 1 is related to storing information in a hash table. Task 2 is related to comparing normal binary search tree and AVL tree based on time complexity. Task 3 is finding routes between two nodes in a graph. Task 4 is about running four calculation operations concurrently. I would like to thank my lecturer, Ms. Koo Lee Chun for her guidance.</p>
+                <p class="Description">This project is the coursework for Advanced Algorithms subject from April 2022 to July 2022. There are four tasks in the question paper. Task 1 is related to storing and retrieving information with key in a hash table. The hash table handles key collision by chaining approach. Task 2 is related to comparing normal binary search tree and self-balancing binary search tree (AVL tree) based on time complexity and actual operation time. The experiment setting is inserting a sorted list of numbers and a random, not sorted list of numbers into a binary search tree and an AVL tree. This results in four different sets. On each of the four sets, a number which does not exist in the tree is searched. This forces the programme to search the full height of the tree. The operation time is recorded and compared accross the four sets. This is compared with the time complexity of search operation of binary search tree and AVL tree on sorted and random, not sorted dataset. Task 3 is finding routes between two nodes in a graph. The programme asks the user to input 2 nodes and the programme will determine whether the two nodes are connected. If the two nodes are neighbouring nodes, the programme will display the distance between the two nodes, else if the two nodes are connected via other nodes, the programme will display the route and distance between the two nodes, else if the two nodes are not connected, the programme will notify the user that these two nodes are not connected. Task 4 is about running four calculation operations concurrently. The sequence of the calculation operations are observed. Due to the property of concurrency, the sequence of the operations is different in different runs. I would like to thank my lecturer, Ms. Koo Lee Chun for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="5003CEM April 2022 Task.pdf"><p>Task Questions</p></a>
@@ -183,19 +177,52 @@
                 </div>
             </div>
 
-            <div id="project7" class="Item">
+            <div id="project3" class="Item">
+                <h2>SoccerDB (Security Assessment and Enhancement on a Website)</h2>
+                <p>Category: Website, Server, Web security</p>
+                <p>Languages: Javascript, HTML, CSS</p>
+                <p>Software: Visual Studio Code</p>
+                <p>Date: November 2023</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: Express.js, MongoDB, Third Party API, REST API, Security, Password Hashing, PBKDF2, Password Rules, Password Strength Indicator</p>
+                <p class="Description">This project is the coursework for two subjects, namely Web Application Programming Interface (API) Development (Task 1, April 2023 to July 2023) and Security (Task 2, August 2023 to November 2023). In Task 1, a website that uses a third-party API, SportsDB, as its source of data is developed. This website allows users to view the information, such as time, location and results, of any soccer event worldwide. Then, the user can save the event in bookmarks for future reference. The user can access his own bookmarks and view the list of bookmarked events, update the result of any event and remove any event from bookmark. On the other hand, the adminstrator can view all normal users and remove any normal user. In Task 2, the security aspects of the website are reviewed. The website already implements attribute-based (login is required to access user-specific bookmark) and role-based (login is required to access administrator functionality) access control. The website also already has password hashing by using Message Digest algorithm 5 (MD5). After analysing the existing website and researching the available security options, improvements are made in two aspects. Firstly, the password is hashed using Password-Based Key Derivation Function 2 (PBKDF2) before stored in the database. The purpose of password hashing is to prevent the password from being revealed in case of the database is leaked. Before being hashed, the password is also appended with a random string called salt. Adding different salt to password of different user makes rainbow table attack (pre-compute the hashed passwords) less efficient. After salting, brute force attack is still efficient due to high computing power processor. So, the password hashing is made into a computationally heavy process by applying key stretching. So, PBKDF2 is used. Secondly, password rules, namely "must have numbers", "must have upper-case and lower-cse characters", "must have special characters", and "must have at least 10 characters" are implemented and a simple password strength indicator is developed. The first three rules are implemented to overcome dictionary attack (guessing the password from dictionary words) by introducing randomness in the password. The last rule (password length) is implemented to make brute force attack harder by making the password longer. When the password is longer, the number of all possible passwords is larger. As a reminder to the user, a password strength indicator based on the compliance of each rule and the password strength is developed on the registration page. The password strength is calculated based on password length and number of possible characters. I would like to thank my lecturers, Mr. Shahriman Mohd Said (Web API Development) and Mr. R.K. Krishnamoorthy (Security) for their guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="6003CEM April 2023 Task.pdf"><p>Task 1 (Web API Development) Question</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="6003CEM April 2023 Report.pdf"><p>Task 1 (Web API Development) Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="6005CEM August 2023 Task.pdf"><p>Task 2 (Security) Question</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="6005CEM August 2023 Report.pdf"><p>Task 2 (Security) Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="6005CEM August 2023 Slides.pdf"><p>Task 2 (Security) Slides</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="https://github.com/ChanKhaiShen/SoccerDB"><p>Code</p></a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="project2" class="Item">
                 <h2>Parallel Programming and Distributed Programming (OpenMP and MPI in Linux)</h2>
                 <p>Category: Parallel and distributed programming</p>
                 <p>Language: C, C++</p>
                 <p>Software: Oracle VM VirtualBox (Linux Ubuntu Virtual Machine)</p>
-                <p>Keywords: Linux, Parallel Programming, Distributed Programming, Thread, Process, OpenMP, MPI</p>
-                <p>This project is the coursework for Parallel and Distributed Programming subject from April 2023 to July 2023. There are six programming tasks in the question paper. Three of the six questions are related to parallel programming whereas three other questions are related to distributed programming. For parallel programming, part A is about printing "Hello World" from different threads; part B is about comparing static scheduling and dynamic scheduling in a parallel for loop based on time used; part C is about comparing the time used for parallel for loop with different number of threads and parallelizing different parts (outetmost loop and innermost loop) in matrix calculation. For distributed programming, part A is about printing "Hello" from different processes; part B is about sending different messages from different slave processes to the master process; part C is about the explaining the usage of message tags (the master process sends a message with tag "100" but the slave process waits for message with tag "101" so the program hangs, and the task is explains why the program hangs). I would like to thank my lecturer, Ms. Vasuky Mohanan for her guidance.</p>
+                <p>Date: July 2023</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: Linux, Parallel Programming, Distributed Programming, Thread, Process, OpenMP, MPI, Dynamic Scheduling, Static Scheduling</p>
+                <p class="Description">This project is the coursework for Parallel and Distributed Programming subject from April 2023 to July 2023. There is one written technical report which covers the comparison between OpenMP and CUDA and the comparison between OpenMP and MPI. There are six programming tasks in the question paper. Three of the six questions are related to parallel programming whereas three other questions are related to distributed programming. For parallel programming, part A is about printing "Hello World" from different threads and specifying the number of threads through command line and source code; part B is about comparing static scheduling and dynamic scheduling in a parallel for loop executing vector addition based on the time used (the result is static scheduling is faster than dynamic scheduling because the workload of vector addition is almost equal in each iteration); part C is about comparing the time used for parallel for loop with different number of threads (and also serial) and parallelizing different parts (outetmost loop and innermost loop) in matrix multiplication (the result is outermost loop parallelization is faster than innermost loop parallelization because the number of iteration in innermost loop parallelization is thousand times more than that of outermost loop parallelization; another observation is when size of matrix is larger, parallelization is more efficient). For distributed programming, part A is about specializing the number of processes and printing "Hello" from different processes; the first part of part B is about each slave process sends a message to the master process and the master process prints the messages, whereas the second part is similar to the first part but this time each slave process sends a different message; the first part of part C is the master process sends a message to each slave process and each slave process prints the message, whereas the second part is about the explaining the usage of message tags (the master process sends a message with tag "100" but the slave process waits for message with tag "101" so the program hangs, and the task is explains why the program hangs). The report was slightly edited on March 2025 to include additional explanation on the observation of time used for matrix multiplication using different matrix sizes, number of threads and innermost loop parallelization and outermost loop parallelization. I would like to thank my lecturer, Ms. Vasuky Mohanan for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="6004CEM April 2023 Task.pdf"><p>Task Questions</p></a>
                     </button>
                     <button class="LinkButton">
-                        <a href="6004CEM April 2023 Report.pdf"><p>Report</p></a>
+                        <a href="6004CEM April 2023 Report (Edited March 2025).pdf"><p>Report</p></a>
                     </button>
                     <button class="LinkButton">
                         <a href="https://github.com/chankhaishen2/Parallel-and-Distributed-Programming-Coursework"><p>Code</p></a>
@@ -203,37 +230,21 @@
                 </div>
             </div>
 
-            <div id="project8" class="Item">
-                <h2>Data Analysis using R</h2>
-                <p>Category: Data analysis</p>
-                <p>Language: R</p>
-                <p>Software: R Studio</p>
-                <p>Keywords: Data Analysis, Descriptive Statistics, Histogram, Strip Chart, Data Pre-Processing</p>
-                <p>This project is the coursework for Data Science from April 2022 to July 2022. The coursework consists of eight questions. Question 1 is about assigning a variable to the dataset. Question 2 is about performing queries on the dataset. Question 3 is about visualizing certain columns of the dataset using histogram and replacing missing values based on skewness (if skewed, use median to replace missing values, else use mean). Question 4 is about computing the descriptive statistics (minimum value, mean, median and standard deviation) of certain columns. Question 5 is about filtering the dataset based on certain criteria. Question 6 is about visualizing the relationship of selected two columns (one is categorical value and the other is numerical value) using strip chart. Question 7 is about converting column with categorical value into numerical value. Question 8 is about computing the correlation between two numerical coulmns. I would like to thank my lecturer, Dr. Fakhitah Ridzuan for her guidance.</p>
-                <div class="SingleLineContainer">
-                    <button class="LinkButton">
-                        <a href="5005CEM April 2022 Task.pdf"><p>Task Questions</p></a>
-                    </button>
-                    <button class="LinkButton">
-                        <a href="https://github.com/chankhaishen2/Data-Analysis-using-R"><p>Code</p></a>
-                    </button>
-                </div>
-            </div>
-
-            <div id="project9" class="Item">
-                <h2>Geo Quiz App (Android)</h2>
+            <div id="project1" class="Item">
+                <h2>Stay Focus App (Group Project)</h2>
                 <p>Category: Smartphone application</p>
-                <p>Language: Java, XML</p>
-                <p>Software: Android Studio</p>
-                <p>Keywords: Android, Data Binding, Intent, Toast</p>
-                <p>This Android application is one of the homeworks that I developed with the guidance from the lectures in Android Development Skills subject. This application is a simple dummy Android application that allows the user to work out on a few Geography quizes. This application is a front end application and lacks a database. All questions are hard-coded. In this project, intent is use to change page and send data between pages, whereas toast is used to display message to the user, whereas data binding is used to control the widgets (such as button and text view) on the user interface from the logic part. I would like to thank my lecturer, Ms. Koo Lee Chun for her guidance.</p>
+                <p>Languages: Mit App Inventor (Blocked-Based Programming Language)</p>
+                <p>Software: MIT App Inventor</p>
+                <p>Date: November 2021</p>
+                <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
+                <p>Keywords: Local Storage, Cloud Storage, Notifier, Timer, Bar Chart, Timetable</p>
+                <p class="Description">This project is the coursework for Smart Phone Apps: From Concept to Design and Market subject done from August 2021 to November 2021. This project is a group project done together with Oh Wen Chi and Lau Wan Jing. The application has five distinct parts. The first part is timer page. In the the timer page, the user can choose an activity and time the activity. The second part is a time record page. In the time record page, the user can insert the time spent for doing three types of activity (sleeping, studying or freedom) every day. In the time record page, based on the data inserted, a bar chart showing number of hours spent on each type of activity in the current month will be displayed. The third part is the study hub page. In the study hub page, the the user can upload articles to be shared with other users. The articles are stored on a cloud database wi]hich can be accessed by all users. The fourth part is the notes page. In the notes page, the user can write and save notes locally. The fifth part is the timetable. In the timetable page, the user can insert the activity scheduled on each hour. The weekly timetable, based on the data inserted, will be displayed. I would like to thank my lecturer, Ms. Vasuky Mohanan for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
-                        <a href="https://github.com/chankhaishen2/Geo-Quiz-App"><p>Code</p></a>
+                        <a href="https://github.com/ChanKhaiShen/AG101SGI-StayFocusApp"><p>Code</p></a>
                     </button>
                 </div>
             </div>
-            
         </div>
 
     </body>
@@ -247,19 +258,23 @@
                 console.log(projectId);
                 const project = document.getElementById(projectId);
                 
-                const title = document.getElementsByTagName("h2")[0];
+                const title = project.getElementsByTagName("h2")[0];
                 console.log(title);
                 const ps = project.getElementsByTagName("p");
                 const category = ps[0];
                 const language = ps[1];
                 const software = ps[2];
-                const keywords = ps[3];
-                const description = ps [4];
+                const date = ps[3];
+                const institution = ps[4];
+                const keywords = ps[5];
+                const description = ps [6];
 
                 const titleValue = title.textContent || title.innerText;
                 const categoryValue = category.textContent || category.innerText;
                 const languageValue = language.textContent || language.innerText;
                 const softwareValue = software.textContent || software.innerText;
+                const dateValue = date.textContent || date.innerText;
+                const institutionValue = institution.textContent || institution.innerText;
                 const keywordsValue = keywords.textContent || keywords.innerText;
                 const descriptionValue = description.textContent || description.innerText;
 
@@ -273,6 +288,15 @@
                     project.style.display = "";
                 }
                 else if (languageValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (softwareValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (dateValue.toLowerCase().indexOf(searchWord) > -1) {
+                    project.style.display = "";
+                }
+                else if (institutionValue.toLowerCase().indexOf(searchWord) > -1) {
                     project.style.display = "";
                 }
                 else if (keywordsValue.toLowerCase().indexOf(searchWord) > -1) {
@@ -312,7 +336,10 @@
                 else if (document.getElementById("dataAnalysis").checked && categoryValue.toLowerCase().indexOf('data analysis') > -1) {
                     project.style.display = "";
                 }
-                else if (document.getElementById('algorithms').checked && categoryValue.toLowerCase().indexOf("algorithms") > -1) {
+                else if (document.getElementById("webSecurity").checked && categoryValue.toLowerCase().indexOf("web security") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById('dataStructureAndAlgorithms').checked && categoryValue.toLowerCase().indexOf("data structure and algorithms") > -1) {
                     project.style.display = "";
                 }
                 else if (document.getElementById("parallelAndDistributedProgramming").checked && categoryValue.toLowerCase().indexOf('parallel and distributed programming') > -1) {
