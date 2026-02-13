@@ -36,7 +36,15 @@
                 <input type="checkbox" id="artificialIntelligence" name="artificial intelligence">
                 <label for="artificial intelligence">Artificial intelligence</label><br>
                 <input type="checkbox" id="computerVision" name="computer vision">
-                <label for="computer vision">Computer Vision</label><br>
+                <label for="computer vision">Computer vision</label><br>
+                <input type="checkbox" id="naturalLanguageProcessing" name="natural language processing">
+                <label for="natural language processing">Natural language processing</label><br>
+                <input type="checkbox" id="speechAnalytics" name="speech analytics">
+                <label for="speech analytics">Speech analytics</label><br>
+                <input type="checkbox" id="fuzzyLogic" name="fuzzy logic">
+                <label for="fuzzy logic">Fuzzy logic</label><br>
+                <input type="checkbox" id="clustering" name="clustering">
+                <label for="clustering">Clustering</label><br>
                 <input type="checkbox" id="dataAnalysis" name="data analysis">
                 <label for="data analysis">Data analysis</label><br>
                 <input type="checkbox" id="webSecurity" name="webSecurity">
@@ -51,14 +59,57 @@
                 
             </div>
 
-            <div id="project11" class="Item">
-                <h2>Classification of Sunflower Blooming Stages Using CNN and Transfer Learning</h2>
+            <div id="project16" class="Item">
+                <h2>Sentiment Classification of Patient Medication Feedback Text using Sentiment Lexicon, Bag of Words anf Term Frequency-Inverse Document Frequency</h2>
+                <p>Category: Artificial intelligence, Natural language processing</p>
+                <p>Language: Python</p>
+                <p>Software: Jupyter Notebook</p>
+                <p>Date: January 2026</p>
+                <p>Institution: School of Computer Sciences, Universiti Sains Malaysia</p>
+                <p>Keywords: Machine Learning, Bag of Words (BOW), Term Frequency-Inverse Document Frequency (TF-IDF), Valence Aware Dictionary for Sentiment Reasoning (VADER), Text Preprocessing, Regular Expression Cleaning, Tokenization, Part of Speech Tagging, Lemmatisation, Stop Word Removal, Scikit Learn, Multinomial Naive Bayes, Logistic Regression, Multi-layer Perceptron, Random Forest, Model Training, Model Fine Tuning</p>
+                <p class="Description">This project is the project for Text and Speech Analytics subject from October 2025 to January 2026. This is an individual project. The purpose of this project is to investigate whether adding sentiment lexicon feature into the classical Bag of Words (BOW) or Term Frequency-Inverse Document Frequency (TF-IDF) will improve the performance of sentiment classification of patient medication feedback text. The dataset used in this project originates from https://www.kaggle.com/datasets/mukeshdevrath007/drugs-and-conditions-patient-voices-2-8l. The patient medication feedback text from the content attribute in the dataset is preprocessed. The preprocessing process involves regular expression cleaning, lowercasing, tokenzation, part of speech tagging, lemmatisation and stop word removal. The 10-scale rating in the rating column in the dataset is converted to 2-scale sentiment (1-4: negative, 5-10: positive). A baseline using VADER sentiment lexicon only (no machine learning) is set for this project and the macro average F1 is 0.5884. Macro average F1 is used to evaluate the performance of the models because the class distribution is imbalanced. 4 feature representations, namely BOW, BOW + VADER, TFIDF and TF-IDF + VADER, are experimented. 3 classical machine learning algorithms, namely logistic regression, multinomial naive Bayes and multi-layer perceptron, are tested. Random forest is also used initially, but in the first experiment with BOW feature representation, random forest has lower performance than the baseline (0.4075), so it is dropped in the subsequent experiments. It is found that all machine learning models (except random forest) outperformed the baseline. This shows machine learning is an effective method for sentiment classification of patient medication feedback. The best performing model is multi-layer perceptron with BOW + VADER feature representation, with test macro average F1 of 0.8300. For logistic regression, TF-IDF feature representation outperforms BOW feature representation because logistic regression benefits from lower magnitude of the normalized values of TF-IDF. For multinomial naive Bayes and multi-layer perceptron, BOW feature resentation outperforms TF-IDF feature representation because multinomial naive Bayes is designed for raw count and multi-layer perceptron might make use of raw frequency to extract the hidden pattern. For 3 out of 6 cases, adding sentiment lexicon improves the performance because sentiment lexicon gives extra information which is useful for the model, whereas for another 3 out of 6 cases, adding sentiment lexicon degrades the performance because sentiment lexicon adds noise to the feature. So, the conclusion is adding sentiment lexicon information to BOW and TF-IDF does not always improve the performance, though sometimes it does. I would like to thank my lecturer, Assoc. Prof. Gan Keng Hoon for her guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="CDS522 Project Report.pdf"><p>Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="CDS522 Project Infographic Porter.pdf"><p>Infographic Poster</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href=""><p>Code</p></a>
+                    </button>
+                </div>
+                <iframe src="https://drive.google.com/file/d/1V5y-4NtEEcoDCDEEaIkPMsHqeOVXIu0c/view?usp=sharing" width="680" height="480" allow="autoplay"></iframe>
+            </div>
+
+            <div id="project15" class="Item">
+                <h2>An Applied Study of Speech Emotion Classification Using Mel Frequency Cepstral Coefficient Features and Classical Machine Learning Models</h2>
+                <p>Category: Artificial intelligence, Natural language processing, Speech analytics</p>
+                <p>Language: Python</p>
+                <p>Software: Jupyter Notebook</p>
+                <p>Date: January 2026</p>
+                <p>Institution: School of Computer Sciences, Universiti Sains Malaysia</p>
+                <p>Keywords: Machine Learning, Speech Emotion Recognition, Mel Frequency Cepstral Coefficient (MFCC), Librosa, Decision Tree, Support Vector Machine, K Nearest Neighbours, Naive Bayes, Logistic Regression, Multi-layer Perceptron, Random Forest, Model Training, Model Fine Tuning</p>
+                <p class="Description">This project is Assignment 2 for Text and Speech Analytics subject from October 2025 to January 2026. This is an individual project. In this project, speech emotion recognition using Mel frequency cepstral coefficient (MFCC) and classical machine learning is explored. The dataset used in this project originates from https://www.kaggle.com/datasets/ahmedeabozaid/audio-sentiment-analysis. The short speech audio files in the dataset is converted to MFCC. There are six emotion labels in the dataset, namely anger emotion, fear emotion, disgust emotion, happy emotion, neutral emotion and sad emotion. Since the distribution of classes is balanced, accuracy is used to evaluate the models. The experiment is split into two rounds. The first round focuses on finding good machine learning model for speech emotion recognition based on mean of MFCC. The second round focuses on investigating the difference of the performance of the top three models in the first round when using mean + standard deviation of MFCC and mean of MFCC. In the first round, 11 machine learning algorithms, namely decision tree, support vector machine with linear kernel, support vector machine with polynomial kernel, support vector machine with radial basis function kernel, support vector machine with sigmoid kernel, k nearest neighbours, Gaussian naive Bayes, Bernoulli naive Bayes, logistic regression, multi-layer perceptron and random forest, are tuned and compared. The three best performing models are k nearest neighbours, with test accuracy of 0.5411, support vector machine with polynomial kernel, with test accuracy of 0.5269 and multi-layer perceptron, with test accuracy of 0.5000. In the second round, these three algorithms are used to train speech emotion recognition model based on mean and standard deviation of MFCC. The test accuracy of k nearest neighbours, support vector machine with polynomial kernel and multi-layer perceptron are 0.5813, 0.6144 and 0.5605 respectively. So, the performance is better when using mean and standard deviation of MFCC compared using mean of MFCC only. This might be because standard deviation of MFCC provides extra information on the speech acoustic features. The universal best performing model in this project is the support vector machine with polynomial kernel model. I would like to thank my lecturer, Dr. Nur Hana Samsudin for her guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="CDS522 Assignment 2 Report.pdf"><p>Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="https://github.com/chankhaishen2/Speech-Emotion-Recognition-using-Mel-Frequency-Cepstral-Coefficient-and-Classical-Machine-Learning"><p>Code</p></a>
+                    </button>
+                </div>
+                <iframe src="https://drive.google.com/file/d/1y1tJF602bdjYHzz8rADcJPal9KdlJmNo/view?usp=sharing" width="680" height="480" allow="autoplay"></iframe>
+            </div>
+
+            <div id="project14" class="Item">
+                <h2>Classification of Sunflower Blooming Stages Using Inception V3 (Transfer Learning)</h2>
                 <p>Category: Artificial intelligence, Computer vision</p>
                 <p>Language: Python</p>
                 <p>Software: Google Co-Laboratory</p>
                 <p>Date: July 2025</p>
                 <p>Institution: School of Computer Sciences, Universiti Sains Malaysia</p>
-                <p>Keywords: Machine Learning, Convolutional Neural Network, Transfer Learning, Inception V3, Image Classification, TensorFlow, Dataset Preparation, Model Training, Model Fine Tuning,</p>
+                <p>Keywords: Machine Learning, Convolutional Neural Network, Transfer Learning, Inception V3, Image Classification, TensorFlow, Dataset Preparation, Model Training, Model Fine Tuning</p>
                 <p class="Description">This project is the coursework for Multimodal Information Retrieval subject from March 2025 to July 2025. This project involves a nearly full cycle artificial intelligence development cycle, which includes problem definition, dataset preparation, model training, model fine tuning, model comparison and model selection, but excludes model deployment. My lecturer splits the project into two parts, namely assignment and project. The assignment is the problem definition and dataset preparation, whereas the project is the remaining process of the artificial intelligence model development cycle until model selection, together with the report for all processes. In the assignment, I was grouped with Hneah Guey Ling, Loh Min Yi, Muhammed Jubarah, Liu Sixuan, Chen Ziyi, Jiang Runjiang, Zheng Chengjin and Goh Deng Vee. Our problem is about sunflower blooming stage classification into four classes (bud, partially bloom, fully bloom and wilt) based on image. In the assignment, my task was to collect 100 image of wilt sunflowers. I bought three fresh sunflowers, waited for the flowers to wilt, and take photo of the flowers. 51 of the 100 images were collected using this method, whereas the rest of the images were collected from Pinterest and Google Search. For the project, the group was halved, and I was grouped with Hneah Guey Ling, Loh Min Yi and Muhammed Jubarah. The team jointly trains, fine tune and compares a custom convolutional neural network model and transfer learning model using VGG-16, AlexNet and Inception V3 as the base model. My task was to conduct literature review and write the related work section in the report, and train and fine tune the transfer learning model with Inception V3 base model. The fine-tuning was done by experimenting different optimizers and different percentages of unfrozen convolutional layers. In the first experiment, all convolutional layers were frozen, and among Adam, Adagrad, RMS Prop and SGD, the model trained using Adam optimizer achieved the highest test and validation accuracy. In the second experiment, Adam optimizer is used, and among 0%, 10%, 15%, 20% and 25%, the overall performance of 10% unfrozen is the best (highest test validation and considerably high validation accuracy). In both experiments, the number of epochs is 10 and the learning rate is 0.0001. So, the best configuration for Inception V3 is 10% unfrozen and using Adam optimizer. I would like to thank my lecturer, Prof. Dr. Putra Sumari for his guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
@@ -67,7 +118,7 @@
                 </div>
             </div>
 
-            <div id="project10" class="Item">
+            <div id="project13" class="Item">
                 <h2>An Electronic Commerce Website for a Book Shop using Express.js Server with Customer Churn Prediction using Neural Network</h2>
                 <p>Category: Artificial intelligence, Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS, Python</p>
@@ -93,7 +144,26 @@
                 <iframe src="https://drive.google.com/file/d/15vV-A0Iaj_vmugS59WFE8uRAPzoToKBH/preview" width="680" height="480" allow="autoplay"></iframe>
             </div>
 
-            <div id="project9" class="Item">
+            <div id="project12" class="Item">
+                <h2>Prediction of Heart Attack Risk based on Health Record and Daily Habits: Comparison of Machine Learning Algorithms, Feature Selection and Ensemble learning</h2>
+                <p>Category: Artificial intelligence</p>
+                <p>Language: Python</p>
+                <p>Software: Jupyter Notebook</p>
+                <p>Date: January 2026</p>
+                <p>Institution: School of Computer Sciences, Universiti Sains Malaysia</p>
+                <p>Keywords: Machine Learning, Logistic Regression, K Nearest Neighbours, Decision Tree, Naive Bayes, Multi-layer Perceptron, Neural Network, Scikit Learn, Binary Classification, Model Training, Model Fine Tuning, Feature Selection, Variance Threshold, ANOVA Filter, Information Gain, Chi Squared, Ensemble Learning, Bagging, Ada Boost, Hard Voting</p>
+                <p class="Description">This project is the project for Machine Learning subject from October 2025 to January 2026. This project explores several options to train a supervised machine learning model to predict the risk of a patient to have heart attack based on his health record and daily habits. This is a binary classification problem because in the data, the patient is labelled as has heart attack or does not have heart attack. The dataset originates from https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease. This project is a group project. I was tasked to perform hyperparameter tuning for decision tree, logistic regression, multi-layer perceptron and k nearest neighbour. But, I have extended my task to do feature selection and ensemble learning as a personal project. In fact, this was not my task in the group project, but it is included in the syllabus, so I want to learn by trying to do it on my own. In this project, macro average F1 is used to evaluate the performance of the models because the class distribution is extremely imbalanced (there are extremely few cases of heart attack compared to no heart attack). In the hyperparameter tuning and machine learning comparison part, grid search is used to perform hyperparameter tuning and the performance of the models with the best hyperparameters for each algorithm are compared. Decision tree is the best performing model. In the feature selection part, I use variance threshold and ANOVA filter to select 3 features from 6 numerical features and use Chi squared and information gain to select 16 features from 31 categorical features. This results in 4 feature subsets with 19 features. Each set is experimented on each of the 4 machine learning algorithms. It is found that the perfromance of k nearest neighbour improves significantly because k nearest neighbour works better in low dimensionality feature space. For other algorithms, feature selection does not degrade the performance significantly. This shows that the feature set can be reduced with minimal harm to the performance if it is performed properly. In the ensmeble learning part, bagging is performed on all 4 machine learning algorithms, whereas Ada Boost is performed on decision tree and logistic regression, whereas hard voting is performed on combination of logistic regression, multi-layer perceptron and k nearest neighbour and combination of logistic regression and multi-layer perceptron. It is found that the performance either drops or only improves marginally. This means that ensemble learning does not imrpove the performance significantly. The universal best performing model in this project is decision tree, which achieves test macro average F1 of 0.730504 for all cases. One possible reason for the performance of decision tree to remain the same after dimensionality reduction might be the maximum depth of the tree is 10, so no matter the feature size is 37 (original) or 19, it is possible that the same tree is produced by the model. The most simple decision tree model is selected, which is the one trained with the selected features. I would like to thank my lecturer, Dr. Jasy Liew Suet Yan for her guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="CDS503 Project Report (with Extension).pdf"><p>Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="https://github.com/chankhaishen2/Heart-Attack-Risk-Prediction-Based-on-Health-Record-and-Daily-Habit-using-Machine-Learning"><p>Code</p></a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="project11" class="Item">
                 <h2>Customer Churn Prediction in Telecommunication Company: Comparison of Logistic Regression and Artificial Neural Network</h2>
                 <p>Category: Artificial intelligence</p>
                 <p>Language: Python</p>
@@ -112,7 +182,26 @@
                 </div>
             </div>
 
-            <div id="project8" class="Item">
+            <div id="project10" class="Item">
+                <h2>Predicting the Likelihood of Customer to Buy Product: A Fuzzy Logic System</h2>
+                <p>Category: Artificial intelligence, Fuzzy logic</p>
+                <p>Language: Python</p>
+                <p>Software: PyCharm</p>
+                <p>Date: January 2026</p>
+                <p>Institution: School of Cmputer Sciences, Universiti Sains Malaysia</p>
+                <p>Keywords: Fuzzy Logic</p>
+                <p class="Description">This project is part of the assignment 2 for Computational Intelligence subject from October 2025 to January 2026. This is a group project which I worked with Saw Wei Chin and Nur Adilah Adha. In this project, we designed and implemented a fuzzy logic system to predict the likihood of a customer to but a product on an online shop. All members are involved in designing the membership functions and the inference rules of the fuzzy logic system, but all code for this assignemnt is written by me. The fuzzy logic system uses product price, product review and delivery time as the input variables and predicts the likelihood (of customer to buy a product) as the outpur variable. As a requirement for this assignment, no library is used to implement the fuzzy logic system. I would like to thank my lecturer, Dr. Mohd Nadhir Ab Wahab for his guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="CCS516 Assignment 2 (My Part).pdf"><p>Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="https://github.com/chankhaishen2/Predicting-Likelihood-of-Customer-to-Buy-Product-using-Fuzzy-Logic"><p>Code</p></a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="project9" class="Item">
                 <h2>City Complaint System (MERN Stack)</h2>
                 <p>Category: Data analysis, Website, Server</p>
                 <p>Languages: Javascript, HTML, CSS</p>
@@ -137,7 +226,7 @@
                 </div>
             </div>
 
-            <div id="project7" class="Item">
+            <div id="project8" class="Item">
                 <h2>An Online Quiz System with A Quiz Answering Smartphone Application and A Quiz Setting Website using Express.js Server</h2>
                 <p>Category: Smartphone application, Website, Server, Data analysis</p>
                 <p>Languages: Javascript, HTML, CSS, MIT App Inventor (Block-based Programming Language)</p>
@@ -159,15 +248,15 @@
                 </div>
             </div>
             
-            <div id="project6" class="Item">
+            <div id="project7" class="Item">
                 <h2>Grocery Big Data (Descriptive Analysis and Clustering)</h2>
-                <p>Category: Artificial intelligence, Data analysis</p>
+                <p>Category: Artificial intelligence, Data analysis, Clustering</p>
                 <p>Language: R</p>
                 <p>Software: R Studio</p>
                 <p>Date: November 2022</p>
                 <p>Institution: INTI International College Penang in collaboration with Coventry University, UK</p>
-                <p>Keywords: Machine Learning, Clustering, k-means Clustering, Silhouette width, Boxplot, Histogram, Pie Chart</p>
-                <p class="Description">This project is part of the coursework for Big Data Programming Project from August 2022 to November 2022. This project used data collected from Tesco grocery shop in London. The source of dataset is from https://doi.org/10.6084/m9.figshare.c.4769354.v2. This project has two parts, namely descriptive analysis and clustering. In the descriptive analysis part, the grocery purchase data is analysed based on its distribution (mean, median, first quartile, third quartile, minimum value and maximum value) and histograms and boxplots are drawn. Besides that, the grocery purchase data is used to draw a pie chart to illustrate the percentage of sales of each food and drinks category. In the clustering part, all customers are split into 4 clusters. While I was considering the number of clusters, different number of clusters are tried out and the sum of squared error within cluster and the Silhouette width are calculated. The graph of sum of squared error versus number of clusters and the graph of Silhouette width versus number of clusters are plotted. It is found that the suitable number of clusters is 4. The members of each cluster are analysed and the distinct behaviour of each cluster (in terms of fraction of buying certain type of food) is visualized using boxplots. The report is slightly edited on March 2025 to add more explanation on the formula of squared error and the calculation of Silhouette width I would like to thank my lecturer, Dr. Fakhitah Ridzuan for her guidance.</p>
+                <p>Keywords: Machine Learning, K-means Clustering, Silhouette width, Boxplot, Histogram, Pie Chart</p>
+                <p class="Description">This project is part of the coursework for Big Data Programming Project subject from August 2022 to November 2022. This project used data collected from Tesco grocery shop in London. The source of dataset is from https://doi.org/10.6084/m9.figshare.c.4769354.v2. This project has two parts, namely descriptive analysis and clustering. In the descriptive analysis part, the grocery purchase data is analysed based on its distribution (mean, median, first quartile, third quartile, minimum value and maximum value) and histograms and boxplots are drawn. Besides that, the grocery purchase data is used to draw a pie chart to illustrate the percentage of sales of each food and drinks category. In the clustering part, all customers are split into 4 clusters. While I was considering the number of clusters, different number of clusters are tried out and the sum of squared error within cluster and the Silhouette width are calculated. The graph of sum of squared error versus number of clusters and the graph of Silhouette width versus number of clusters are plotted. It is found that the suitable number of clusters is 4. The members of each cluster are analysed and the distinct behaviour of each cluster (in terms of fraction of buying certain type of food) is visualized using boxplots. The report is slightly edited on March 2025 to add more explanation on the formula of squared error and the calculation of Silhouette width. I would like to thank my lecturer, Dr. Fakhitah Ridzuan for her guidance.</p>
                 <div class="SingleLineContainer">
                     <button class="LinkButton">
                         <a href="5011CEM August 2022 Report (Descriptive Analysis and Clustering) (Edited March 2025).pdf"><p>Report</p></a>
@@ -177,6 +266,25 @@
                     </button>
                     <button class="LinkButton">
                         <a href="https://github.com/chankhaishen2/Grocery-Big-Data-Descriptive-Analysis-and-Clustering"><p>Code</p></a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="project6" class="Item">
+                <h2>Country Clustering based on Latitude and Longitude</h2>
+                <p>Category: Artificial intelligence, Clustering</p>
+                <p>Language: Python</p>
+                <p>Software: Jupyter Notebook</p>
+                <p>Date: January 2026</p>
+                <p>Institution: School of Cmputer Sciences, Universiti Sains Malaysia</p>
+                <p>Keywords: Machine Learning, K-Means Clustering, Hierarchical Clustering, Agglomerative Clustering</p>
+                <p class="Description">This project is part of the assignment 2 for Machine Learning subject from October 2025 to January 2026. This is a individual project which requires me to cluster a list of countries into their corresponding continents given their latitudes and longitudes. I used k-means clustering and hierarchical clustering (agglomerative clustering) to generate clusters for this task. Note that agglomerative clustering is an algorithm that is under the hierarchical clustering category. The parameter of both algorithms are tuned. The final clustering that I think is most accurate is the clustering generated by agglomerative clustering with complete linkage. There is no correct continents provided to check whether the clustering is correct. Nonetheless, I checked with ChatGPT and the answer is my clustering is 72%-75% correct. This gives an objective view for the correctness of the clustering that I generated by tuning and comparing k-means clustering and agglomerative clustering. I would like to thank my lecturer, Dr. Jasy Liew Suet Yan for her guidance.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="CDS503 Assignment 2 Report.pdf"><p>Report</p></a>
+                    </button>
+                    <button class="LinkButton">
+                        <a href="https://github.com/chankhaishen2/Country-Clustering"><p>Code</p></a>
                     </button>
                 </div>
             </div>
@@ -290,7 +398,7 @@
         // Reference: https://www.w3schools.com/howto/howto_js_filter_table.asp
 
         function search() {
-            for (var i = 1; i <= 11; i++) {
+            for (var i = 1; i <= 16; i++) {
                 const projectId = 'project' + i;
                 console.log(projectId);
                 const project = document.getElementById(projectId);
@@ -349,7 +457,7 @@
         }
 
         function filter() {
-            for (var i = 1; i <= 11; i++) {
+            for (var i = 1; i <= 16; i++) {
                 const projectId = 'project' + i;
                 console.log(projectId);
                 const project = document.getElementById(projectId);
@@ -371,6 +479,18 @@
                     project.style.display = "";
                 }
                 else if (document.getElementById("computerVision").checked && categoryValue.toLowerCase().indexOf("computer vision") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("naturalLanguageProcessing").checked && categoryValue.toLowerCase().indexOf("natural language processing") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("speechAnalytics").checked && categoryValue.toLowerCase().indexOf("speech analytics") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("fuzzyLogic").checked && categoryValue.toLowerCase().indexOf("fuzzy logic") > -1) {
+                    project.style.display = "";
+                }
+                else if (document.getElementById("clustering").checked && categoryValue.toLowerCase().indexOf("clustering") > -1) {
                     project.style.display = "";
                 }
                 else if (document.getElementById("dataAnalysis").checked && categoryValue.toLowerCase().indexOf('data analysis') > -1) {
