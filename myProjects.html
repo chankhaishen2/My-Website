@@ -22,7 +22,8 @@
             <div class="TopItem">
                 <div class="SingleLineContainer">
                     <label for="search word">Search keyword: </label>
-                    <input type="search" id="searchWord" name="search word" placeholder="Keyword" cols="50">
+                    <input type="search" id="searchWord" name="search word" placeholder="Keyword" cols="50" list="searchSuggestions" onchange="updateSearchSuggestions()">
+                    <datalist id="searchSuggestions"></datalist>
                     <button class="TopItemButton" onclick="search()">Search</button><br>
                 </div>
                 
@@ -509,6 +510,132 @@
                     project.style.display = "none";
                 }
             }
+        }
+
+        // Compute bi-gram and tri-gram from all texts
+        var allTexts = '';
+
+        for (var i = 1; i <= 16; i++) {
+                const projectId = 'project' + i;
+                console.log(projectId);
+                const project = document.getElementById(projectId);
+                
+                const title = project.getElementsByTagName("h2")[0];
+                console.log(title);
+                const ps = project.getElementsByTagName("p");
+                const category = ps[0];
+                const language = ps[1];
+                const software = ps[2];
+                const date = ps[3];
+                const institution = ps[4];
+                const keywords = ps[5];
+                const description = ps [6];
+
+                const titleValue = title.textContent || title.innerText;
+                const categoryValue = category.textContent || category.innerText;
+                const languageValue = language.textContent || language.innerText;
+                const softwareValue = software.textContent || software.innerText;
+                const dateValue = date.textContent || date.innerText;
+                const institutionValue = institution.textContent || institution.innerText;
+                const keywordsValue = keywords.textContent || keywords.innerText;
+                const descriptionValue = description.textContent || description.innerText;
+
+                allTexts += ' ' + titleValue.toLowerCase() + '.';
+                allTexts += ' ' + categoryValue.toLowerCase() + '.';
+                allTexts += ' ' + languageValue.toLowerCase() + '.';
+                allTexts += ' ' + softwareValue.toLowerCase() + '.';
+                allTexts += ' ' + dateValue.toLowerCase() + '.';
+                allTexts += ' ' + institutionValue.toLowerCase() + '.';
+                allTexts += ' ' + keywordsValue.toLowerCase() + '.';
+                allTexts += ' ' + descriptionValue.toLowerCase() + '.';
+            }
+
+        console.log(allTexts);
+
+        const allSentences = allTexts.split('.');
+        console.log(allSentences);
+
+        const biGramsAndTriGrams = [];
+        const biGramAndTriGramFrequencies = {};
+
+        for (var i = 0; i < allSentences.length; i++) {
+            const allTokens = allSentences[i].split(' ');
+
+            for (var j = 0; j < allTokens.length; j++) {
+                if (allTokens[j].trim() == '') {
+                    continue;
+                }
+
+                // Bi-gram
+                if (j < allTokens.length - 1) {
+                    const biGram = allTokens[j] + ' ' + allTokens[j+1];
+                    
+                    if (!biGramsAndTriGrams.includes(biGram)) {     // Bi-gram previosly exists
+                        biGramsAndTriGrams.push(biGram);
+                        biGramAndTriGramFrequencies[biGram] = 1;
+                    }
+                    else {
+                        biGramAndTriGramFrequencies[biGram] = biGramAndTriGramFrequencies[biGram] + 1;
+                    }
+                }
+
+                // Tri-gram
+                if (j < allTokens.length - 2) {
+                    const triGram = allTokens[j] + ' ' + allTokens[j+1] + ' ' + allTokens[j+2];
+                    
+                    if (!biGramsAndTriGrams.includes(triGram)) {     // Bi-gram previosly exists
+                        biGramsAndTriGrams.push(triGram);
+                        biGramAndTriGramFrequencies[triGram] = 1;
+                    }
+                    else {
+                        biGramAndTriGramFrequencies[triGram] = biGramAndTriGramFrequencies[triGram] + 1;
+                    }
+                }
+            }
+        }
+
+        console.log(biGramsAndTriGrams);
+        console.log(biGramAndTriGramFrequencies);
+
+        // Sort bi-gram and tri-gram in descending order of frequency
+        biGramsAndTriGrams.sort(
+            function (a, b) {
+                return biGramAndTriGramFrequencies[b] - biGramAndTriGramFrequencies[a]
+            }
+        );
+
+        console.log(biGramsAndTriGrams);
+
+        function updateSearchSuggestions() {
+            // Reference: https://www.w3schools.com/tags/tag_datalist.asp
+            // Update 10 most frequently occur bi-gram or tri-gram as the search suggestion
+
+            const searchWord = document.getElementById("searchWord").value.toLowerCase();
+            console.log(searchWord);
+
+            const searchSuggestions = [];
+
+            for (var i = 0; i < biGramsAndTriGrams.length; i++) {
+                if (searchSuggestions.length === 10) {
+                    break;
+                }
+
+                if (biGramsAndTriGrams[i].indexOf(searchWord) > -1) {
+                    searchSuggestions.push(biGramsAndTriGrams[i]);
+                }
+            }
+
+            console.log(searchSuggestions);
+
+            var searchSuggestionsValue = '';
+
+            for (var i = 0; i < searchSuggestions.length; i++) {
+                searchSuggestionsValue += `
+                    <option value="${searchSuggestions[i]}">
+                `;
+            }
+
+            document.getElementById('searchSuggestions').innerHTML = searchSuggestionsValue;
         }
     </script>
 
