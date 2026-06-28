@@ -123,3 +123,8 @@
 .Table th, td {
     font-size: 20px;
 }
+
+.SearchSuggestionInfo {
+    color: #2f3932;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
