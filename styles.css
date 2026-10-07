@@ -128,3 +128,22 @@
     color: #2f3932;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.PlaygroundItem {
+    background-color: #7e847d;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.PlaygroundItem h2 {
+    font-size: 30px;
+}
+
+.PlaygroundItem p {
+    font-size: 20px;
+}
+
+.Image {
+    display: none;
+}

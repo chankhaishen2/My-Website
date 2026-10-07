@@ -1,7 +1,7 @@
 <html lang="en">
     
     <head>
-        <title>My Projects</title>
+        <title>Khai Shen's Past Projects</title>
     </head>
 
     <link rel="stylesheet" href="styles.css"/>
@@ -10,14 +10,15 @@
 
         <nav class="TopNavigation">
             <ul>
-                <li><a href="index.html"><h3>About Me</h3></a></li>
-                <li><a href="myProjects.html"><h3>My Projects</h3></a></li>
+                <li><a href="index.html"><h3>Who is Khai Shen</h3></a></li>
+                <li><a href="myProjects.html"><h3>Khai Shen's Past Projects</h3></a></li>
+                <li><a href="myAIPlayground.html"><h3>Khai Shen's AI Playground</h3></a></li>
             </ul>
         </nav>
 
         <div class="Content">
             
-            <h1>My Projects</h1>
+            <h1>Khai Shen's Past Projects</h1>
 
             <div class="TopItem">
                 <div class="SingleLineContainer">
@@ -64,7 +65,7 @@
                 
             </div>
 
-            <div id="project17" class="Item">
+            <div id="project18" class="Item">
                 <h2>Sentiment Classification of Patient Medication Feedback Text using Sentiment Lexicon, Bag of Words and Term Frequency-Inverse Document Frequency</h2>
                 <p>Category: Artificial intelligence, Natural language processing</p>
                 <p>Language: Python</p>
@@ -87,7 +88,7 @@
                 <iframe src="https://drive.google.com/file/d/1V5y-4NtEEcoDCDEEaIkPMsHqeOVXIu0c/view?usp=sharing" width="680" height="480" allow="autoplay"></iframe>
             </div>
 
-            <div id="project16" class="Item">
+            <div id="project17" class="Item">
                 <h2>An Applied Study of Speech Emotion Classification Using Mel Frequency Cepstral Coefficient Features and Classical Machine Learning Models</h2>
                 <p>Category: Artificial intelligence, Natural language processing, Speech analytics</p>
                 <p>Language: Python</p>
@@ -105,6 +106,22 @@
                     </button>
                 </div>
                 <iframe src="https://drive.google.com/file/d/1y1tJF602bdjYHzz8rADcJPal9KdlJmNo/view?usp=sharing" width="680" height="480" allow="autoplay"></iframe>
+            </div>
+
+            <div id="project16" class="Item">
+                <h2>Selection of Garbage Classification Model for Edge Deployment</h2>
+                <p>Category: Artificial intelligence, Computer vision</p>
+                <p>Language: Python</p>
+                <p>Software: Jupyter Notebook</p>
+                <p>Date: October 2026</p>
+                <p>Institution: None</p>
+                <p>Keywords: Machine Learning, Transfer Learning, Image Classification, MobileNetV3-Small, MobileNetV2, EfficientNet-B0, PyTorch, Open Neural Network Exchange (ONNX), Model Fine Tuning</p>
+                <p class="Description">This is a side project built from August 2026 to October 2026 during my spare time using the skills learned in School of Computer Sciences, Universiti Sains Malaysia. The purpose of this project is to train and select the garbage image classifier to be deployed on <a href="myAIPlayground.html">my AI playground</a>, which ia a static website. The dataset used in this project originates from https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification?select=Garbage+classification. Three pre-trained convolutional neural network classifiers, namely MobileNetV3-Small, MobileNetV2 and EfficientNet-B0 were fine-tuned and compared based on accuracy and inference time. These three models are shortlisted because these models are lightweight enough to be deployed on browser. The average value over 5 seeds were taken. Quantization was attempted on MobileNetV3-Small, but the accuracy is very low, so quantization was not attempted on the other models. It was found that MobileNetV2 achieved the highest accuracy and the shortest inference time. So, MobileNetV2 was chosen for deployment.</p>
+                <div class="SingleLineContainer">
+                    <button class="LinkButton">
+                        <a href="https://github.com/chankhaishen2/Garbage-Image-Classification"><p>Code</p></a>
+                    </button>
+                </div>
             </div>
 
             <div id="project15" class="Item">
@@ -422,7 +439,7 @@
         // Reference: https://www.w3schools.com/howto/howto_js_filter_table.asp
 
         function search() {
-            for (var i = 1; i <= 17; i++) {
+            for (var i = 1; i <= 18; i++) {
                 const projectId = 'project' + i;
                 console.log(projectId);
                 const project = document.getElementById(projectId);
@@ -481,7 +498,7 @@
         }
 
         function filter() {
-            for (var i = 1; i <= 17; i++) {
+            for (var i = 1; i <= 18; i++) {
                 const projectId = 'project' + i;
                 console.log(projectId);
                 const project = document.getElementById(projectId);
@@ -538,40 +555,40 @@
         // Compute bi-gram and tri-gram from all texts
         var allTexts = '';
 
-        for (var i = 1; i <= 16; i++) {
-                const projectId = 'project' + i;
-                console.log(projectId);
-                const project = document.getElementById(projectId);
-                
-                const title = project.getElementsByTagName("h2")[0];
-                console.log(title);
-                const ps = project.getElementsByTagName("p");
-                const category = ps[0];
-                const language = ps[1];
-                const software = ps[2];
-                const date = ps[3];
-                const institution = ps[4];
-                const keywords = ps[5];
-                const description = ps [6];
+        for (var i = 1; i <= 18; i++) {
+            const projectId = 'project' + i;
+            console.log(projectId);
+            const project = document.getElementById(projectId);
+            
+            const title = project.getElementsByTagName("h2")[0];
+            console.log(title);
+            const ps = project.getElementsByTagName("p");
+            const category = ps[0];
+            const language = ps[1];
+            const software = ps[2];
+            const date = ps[3];
+            const institution = ps[4];
+            const keywords = ps[5];
+            const description = ps [6];
 
-                const titleValue = title.textContent || title.innerText;
-                const categoryValue = category.textContent || category.innerText;
-                const languageValue = language.textContent || language.innerText;
-                const softwareValue = software.textContent || software.innerText;
-                const dateValue = date.textContent || date.innerText;
-                const institutionValue = institution.textContent || institution.innerText;
-                const keywordsValue = keywords.textContent || keywords.innerText;
-                const descriptionValue = description.textContent || description.innerText;
+            const titleValue = title.textContent || title.innerText;
+            const categoryValue = category.textContent || category.innerText;
+            const languageValue = language.textContent || language.innerText;
+            const softwareValue = software.textContent || software.innerText;
+            const dateValue = date.textContent || date.innerText;
+            const institutionValue = institution.textContent || institution.innerText;
+            const keywordsValue = keywords.textContent || keywords.innerText;
+            const descriptionValue = description.textContent || description.innerText;
 
-                allTexts += ' ' + titleValue.toLowerCase() + '.';
-                allTexts += ' ' + categoryValue.toLowerCase() + '.';
-                allTexts += ' ' + languageValue.toLowerCase() + '.';
-                allTexts += ' ' + softwareValue.toLowerCase() + '.';
-                allTexts += ' ' + dateValue.toLowerCase() + '.';
-                allTexts += ' ' + institutionValue.toLowerCase() + '.';
-                allTexts += ' ' + keywordsValue.toLowerCase() + '.';
-                allTexts += ' ' + descriptionValue.toLowerCase() + '.';
-            }
+            allTexts += ' ' + titleValue.toLowerCase() + '.';
+            allTexts += ' ' + categoryValue.toLowerCase() + '.';
+            allTexts += ' ' + languageValue.toLowerCase() + '.';
+            allTexts += ' ' + softwareValue.toLowerCase() + '.';
+            allTexts += ' ' + dateValue.toLowerCase() + '.';
+            allTexts += ' ' + institutionValue.toLowerCase() + '.';
+            allTexts += ' ' + keywordsValue.toLowerCase() + '.';
+            allTexts += ' ' + descriptionValue.toLowerCase() + '.';
+        }
 
         console.log(allTexts);
 

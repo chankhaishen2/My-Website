@@ -1,0 +1,163 @@
+<html lang="en">
+    
+    <head>
+        <title>Khai Shen's AI Playground</title>
+    </head>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+    <body>
+
+        <nav class="TopNavigation">
+            <ul>
+                <li><a href="index.html"><h3>Who is Khai Shen</h3></a></li>
+                <li><a href="myProjects.html"><h3>Khai Shen's Past Projects</h3></a></li>
+                <li><a href="myAIPlayground.html"><h3>Khai Shen's AI Playground</h3></a></li>
+            </ul>
+        </nav>
+
+        <div class="Content">
+            <h1>Khai Shen's AI playground</h1>
+
+            <div class="PlaygroundItem">
+                <h2>Garbage classification</h2>
+                <p>Upload a grabage photo and check whether the <b>MobileNetV2 classifier</b> correctly recognise it. Note that the model can only recognise only cupboard, glass, metal, paper, plastic and trash.</p>
+                <form action="classifyGarbage()">
+                    <label for="garbageImage"><p>Upload photo: </p></label>
+                    <input type="file" id="garbageImageInput" accept="image/*" required/>
+                    <p id="garbageClassificationStatus">Loading ONNX model into browser memory...</p>
+                    <img src="#" id="garbageImage" width="200px" height="200px" class="Image"/>
+                    <div id="garbageClassificationResult"></div>
+                </form>
+            </div>
+        </div>
+    </body>
+
+    <!-- Load ONNX Runtime Web via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+
+    <script>
+        // Define class labels
+        const CLASS_NAMES = ['Cardboard', 'Glass', 'Metal', 'Paper', 'Plastic', 'Trash'];
+  
+        // ImageNet Normalization Constants
+        const MEAN = [0.485, 0.456, 0.406];
+        const STD = [0.229, 0.224, 0.225];
+
+        let session = null;
+
+        // Initialize ONNX Runtime Session
+        async function loadModel() {
+            try {
+                // Uses WebAssembly (WASM) execution provider in browser
+                session = await ort.InferenceSession.create('https://raw.githubusercontent.com/chankhaishen2/Garbage-Image-Classification/main/MobileNetV2.onnx', {
+                    executionProviders: ['wasm']
+                });
+                document.getElementById('garbageClassificationStatus').innerText = 'The model is loaded';
+                document.getElementById('garbageImageInput').disabled = false;
+                console.log('Model loaded')
+            } catch (err) {
+                document.getElementById('garbageClassificationStatus').innerText = 'Failed to load model';
+                console.error(err);
+                console.log(erroe.message)
+            }
+        }
+
+        // Preprocess Uploaded Image (Resize to 224x224 & Normalize)
+        function preprocessImage(imageElement) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 224;
+            canvas.height = 224;
+            const ctx = canvas.getContext('2d');
+
+            // Draw and resize image onto hidden canvas
+            ctx.drawImage(imageElement, 0, 0, 224, 224);
+            const imageData = ctx.getImageData(0, 0, 224, 224).data; // RGBA uint8 array
+
+            // Create planar Float32 array for PyTorch shape: (1, 3, 224, 224)
+            const float32Data = new Float32Array(1 * 3 * 224 * 224);
+
+            for (let i = 0; i < 224 * 224; i++) {
+                let r = imageData[i * 4] / 255.0;
+                let g = imageData[i * 4 + 1] / 255.0;
+                let b = imageData[i * 4 + 2] / 255.0;
+
+                // Apply PyTorch ImageNet Normalization: (val - mean) / std
+                r = (r - MEAN[0]) / STD[0];
+                g = (g - MEAN[1]) / STD[1];
+                b = (b - MEAN[2]) / STD[2];
+
+                // Re-order from HWC to CHN (Channel-first)
+                float32Data[i] = r;                  // Red channel (0)
+                float32Data[224 * 224 + i] = g;       // Green channel (1)
+                float32Data[2 * 224 * 224 + i] = b;   // Blue channel (2)
+            }
+
+            // Wrap into ONNX Tensor
+            return new ort.Tensor('float32', float32Data, [1, 3, 224, 224]);
+        }
+
+        // Numerically stable Softmax implementation
+        function softmax(logits) {
+            const maxLogit = Math.max(...logits); // ... spreads array into single elements, e.g. max([1,2,3]) intp max(1,2,3)
+            const exps = logits.map(x => Math.exp(x - maxLogit));
+            const sumExps = exps.reduce((a, b) => a + b, 0); // reduce makes an array into one value, e.g. sum is reduce((sum, num)=>sum+num, 0), 0 is initial value 
+            return exps.map(x => x / sumExps);
+        }
+
+        // Handle Image Selection & Run Inference
+        document.getElementById('garbageImageInput').addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file) 
+                return;
+
+            const imgElement = document.getElementById('garbageImage');
+            imgElement.src = URL.createObjectURL(file);
+            imgElement.style.display = 'block';
+
+            imgElement.onload = async () => {
+                document.getElementById('garbageClassificationResult').innerText = 'Classifying...';
+                const startTime = performance.now();
+
+                // Preprocess image
+                const inputTensor = preprocessImage(imgElement);
+
+                // Match the input node name assigned during PyTorch ONNX export
+                const inputName = session.inputNames[0]; 
+                const feeds = {};
+                feeds[inputName] = inputTensor;
+
+                // Run model inference in browser
+                const outputMap = await session.run(feeds);
+                const outputTensor = outputMap[session.outputNames[0]];
+                const rawLogits = Array.from(outputTensor.data);
+
+                // Find ArgMax (Predicted Index)
+                const probabilities = softmax(rawLogits);
+
+                let maxIdx = 0;
+                let maxProb = probabilities[0];
+
+                for (let i = 1; i < probabilities.length; i++) {
+                    if (probabilities[i] > maxProb) {
+                        maxProb = probabilities[i];
+                        maxIdx = i;
+                    }
+                }
+
+                const endTime = performance.now();
+                const latency = (endTime - startTime).toFixed(2);
+                const predictedClass = CLASS_NAMES[maxIdx] || `Class ${maxIdx}`;
+
+                document.getElementById('garbageClassificationResult').innerHTML = 
+                    `Predicted: <strong>${predictedClass}</strong><br>` +
+                    `Probability: <strong>${(maxProb*100).toFixed(2)}%</strong><br>` + 
+                    `Inference time: <strong>${latency} millisecond</strong>`;
+            };
+        });
+
+        // Load model when page finishes loading
+        loadModel();
+    </script>
+
+</html>
